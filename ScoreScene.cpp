@@ -7,7 +7,7 @@ Score::Score(const InitData& init)
 	RankUpper_{ U"Audio/Phrase02-1.mp3" }, RankMiddle_{ U"Audio/Phrase03-1.mp3" }, RankLower_{ U"Audio/Phrase04-1.mp3" }
 {
 	auto& data = getData();
-	PlayScore_ = data.score;
+	PlayScore_ = data.playScore;
 }
 
 void Score::update()
@@ -29,7 +29,7 @@ void Score::update()
 void Score::draw() const
 {
 	//点数に沿ってランクSS～Dを表示させる
-	if (getData().fullRun)
+	if (getData().IsFullRun)
 	{
 		RankSS_.drawAt(RankPos_);
 		FontAsset(U"ScoreScene")(U"完走おめでとう！").drawAt(EvaluationPos_);
@@ -92,7 +92,7 @@ void Score::draw() const
 	}
 
 	FontAsset(U"Menu")(U"あなたのスコア").drawAt(400, 380);
-	FontAsset(U"Menu")(getData().score).drawAt(400, 430);
+	FontAsset(U"Menu")(getData().playScore).drawAt(400, 430);
 
 	m_titleButton.draw(ColorF{ 1.0, m_startTransition.value() }).drawFrame(2);
 

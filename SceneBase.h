@@ -12,8 +12,8 @@ enum class State
 // 共有するデータ
 struct GameData
 {
-	int score;
-	bool fullRun;
+	int  playScore;
+	bool IsFullRun;
 	bool RankSE;
 };
 

@@ -57,8 +57,8 @@ void Play::update()
 	Sec_ = 30 - Stopwatch_.s();
 	if (Sec_ == 0)
 	{
-		getData().score += 150;
-		getData().fullRun = true;
+		getData().playScore += 150;
+		getData().IsFullRun = true;
 		changeScene(State::Score);
 	}
 
@@ -118,7 +118,7 @@ void Play::update()
 		else if (Rect(ObstaclePos_[i].x - 50, ObstaclePos_[i].y - 40, 80, 80).intersects(Player))
 		{
 			DieSE_.play();
-			getData().score += (int)MoveDist_;
+			getData().playScore += (int)MoveDist_;
 			changeScene(State::Score);
 		}
 	}
@@ -128,7 +128,7 @@ void Play::update()
 		if (Circle(MoneyPos_[i].x, MoneyPos_[i].y, 25).intersects(Player))
 		{
 			Moneyhave_.playOneShot();
-			getData().score += 10;
+			getData().playScore += 10;
 			MoneyPos_[i].x = 1000;
 			MoneyPos_[i].y = rand() % 350 + 100;
 		}
@@ -145,14 +145,14 @@ void Play::draw() const
 {
 	BackGround_.draw(0, 0);
 
-	FontAsset(U"GameScore")(U"残り時間：").draw(10, 10);
-	FontAsset(U"GameScore")(Sec_).draw(150, 10);
+	FontAsset(U"GameScore")(U"残り時間：").draw(10, 10, Color(Palette::Black));
+	FontAsset(U"GameScore")(Sec_).draw(150, 10, Color(Palette::Black));
 
-	FontAsset(U"GameScore")((int)MoveDist_).draw(300, 10);
-	FontAsset(U"GameScore")(U"ｍ走ったよ").draw(350, 10);
+	FontAsset(U"GameScore")((int)MoveDist_).draw(300, 10, Color(Palette::Black));
+	FontAsset(U"GameScore")(U"ｍ走ったよ").draw(350, 10, Color(Palette::Black));
 
-	FontAsset(U"GameScore")(U"スコア：").draw(550, 10);
-	FontAsset(U"GameScore")(getData().score).draw(670, 10);
+	FontAsset(U"GameScore")(U"スコア：").draw(550, 10, Color(Palette::Black));
+	FontAsset(U"GameScore")(getData().playScore).draw(670, 10, Color(Palette::Black));
 
 	for (int i = 0; i < 3; i++)
 	{

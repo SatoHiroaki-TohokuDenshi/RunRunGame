@@ -7,9 +7,9 @@ class Play : public App::Scene
 public:
 
 	Play(const InitData& init);
-
+	/// @brief 処理を行う関数
 	void update() override;
-
+	/// @brief 描画を行う関数
 	void draw() const override;
 
 private:

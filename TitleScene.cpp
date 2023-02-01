@@ -15,9 +15,9 @@ void Title::update()
 	if (m_startButton.leftClicked())
 	{
 		// ゲームシーンへ
-		getData().score = 0;
+		getData().playScore = 0;
 		getData().RankSE = true;
-		getData().fullRun = false;
+		getData().IsFullRun = false;
 		changeScene(State::Play);
 
 	}
