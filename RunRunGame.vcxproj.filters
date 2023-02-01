@@ -168,6 +168,15 @@
     <ClCompile Include="ScoreScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -811,6 +820,15 @@
     </ClInclude>
     <ClInclude Include="ScoreScene.h">
       <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>PlayScene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
